@@ -212,3 +212,138 @@ int x = 90;
 if (!(x < 12)) // If x is not less than 12
     printf("x is not less than 12\n");
 ```
+
+*Note:* `!` has higher precedence than other boolean operators
+
+### Flow control
+Looking into control statements `if`, `for`, `do-while`, `while`
+
+- Example code
+```c
+int x = 10;
+if (x == 10) printf("x is 10\n"); // # Outputs x is 10
+```
+
+But if we want multiple things to happen due to the conditional? we can use squirrely braces to mark a block or compound statement
+
+```c
+int x = 10;
+if (x == 10) {
+    printf("x is 10\n");
+    printf("And also this happends when x is 10\n");
+}
+```
+
+### The if else statement
+```c
+int i = 99;
+if ( i == 10) {
+    printf("I is 10!\n");
+} else {
+    printf("I is not 10 instead i is %d", i);
+}
+
+// # Output is I is not 10 instead i is 99
+```
+```c
+// Cascading the if else statements
+int i = 99;
+if (1 == 10)
+    printf("I is 10!\n");
+else if (i == 20)
+    printf("I is 20!\n");
+else if (i == 99) {
+    printf("I is 99! My favorite\n");
+    printf("I can't tell you how happy I am. \n");
+    printf("Really.\n");
+}
+else
+    printf("I is some crazy number I've never heard of. \n");
+
+Note: If we're going through this path we can check the switch statement
+```
+### The while statement
+Do a thing while a condition epression is true. Let's do one!
+
+```c
+int i = 0;
+while (i < 10) {
+    printf("i is now %d!\n", i);
+    i++;
+}
+
+printf("All done!\n");
+```
+### The do-while statement
+This is similar to the while loop. but for the do while it executes at least once. If the condition is false it still executes(But only once).
+```c
+do {
+    printf("do-while: is is %d\n", i);
+    i++;
+} while (i < 10);
+
+printf("All done!\n");
+```
+- Example source code
+```c
+#include <stdio.h>
+#include <stdlib.h> /* For the rand function */
+
+int main(void)
+{
+    int r;
+    /* We're saying execute this control flow once before checking the condition.
+     * After executing it check the condition has it met it if no keep executing if the condition met it then stop
+     */
+    do {
+        r = rand() % 100;
+        printf("%d\n", r);
+    } while (r != 37);
+}
+```
+
+### The for statement
+```markdown
+for (initialize things; loop if this is true; do this after each loop)
+```
+*Note:* For loop fun fact
+```c
+/* You can use the comma operator to do multiple things in each claude of the for loop */
+for (i = 0, j = 999; i < 10; i++, j--) {
+    printf("%d, %d\n", i, j);
+}
+```
+
+*Note:* An empty for loop will run forever
+```c
+for(;;) {
+    printf("I will print this again and again and again...\n");
+}
+```
+
+### The switch statement
+```c
+#include <stdio.h>
+int main(void)
+{
+    int goat_count = 2;
+    switch (goat_count) {
+        case 0:
+            printf("You have no goats.\n");
+            break;
+        case 1:
+            printf("You have a singular goat.\n");
+            break;
+        case 2:
+            printf("You have 2 goats.\n");
+            break;
+        default:
+            printf("You have an infinite goat!\n");
+            break;
+    }
+}
+```
+
+Key differences between switch & If-Else
+- Switch is often faster to jump to the correct code.
+- If-Else can do things like relational conditionals like `<` `>=` and floating point and other types, while switch cannot
