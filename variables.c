@@ -32,8 +32,18 @@
 
 int main(void)
 {
-    int i;
-    int j;
-    for (i = 0, j = 10; i < 100; i++, j++)
-    printf("%d, %d\n", i, j);
+    // int i;
+    // int j;
+    // for (i = 0, j = 10; i < 100; i++, j++)
+    // printf("%d, %d\n", i, j);
+
+    // int x;
+    // x = (1,2,3);
+    // printf("x is %d\n", x);
+
+    int x = 90;
+    int y = 21;
+
+    if (!(x < 12))
+        printf("x is not less than 12\n");
 }

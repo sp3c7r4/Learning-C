@@ -19,11 +19,14 @@ Rules of naming a variable
 
 ## Variable Types
 All variable types evolve arund this 4 Types
+
+```
 Type                | Example         | C Type
 Integer             | 3490            | int
 Floating Point      | 3.490           | float
 Character (Single)  | 'c'             | char
 String              | "Hello, World!" | char *
+```
 
 Before you can use a variable you have to declare thay variable and tell C wat type the variable holds, Once declared the type of the varible cannot be changed later at runtime.
 
@@ -162,3 +165,50 @@ Post increment&decrement - The expresion is evaluated before the value of the va
 ```
 
 ### The comma operator
+This works with precedence 
+```c
+int x;
+x = (1,2,3);
+printf("x is %d\n", x); // # Outputs x is 3
+```
+
+### Conditional Operators
+For Boolean values, we have a raft of standard operators.
+```c
+a == b; // True if a is equal to b
+a != b; // True if a is not equal to b
+a < b;  // True if a is greater than b
+a > b;  // True if a is less than b
+a <= b; // True is a is less than or equal to b
+a >= b; // True if a is greater than or equal to b; 
+```
+
+*Note:* Assignment operator `=` is different from comparison `==`. Use two equals to compare and one to assign
+
+### Boolean Operators
+We can chain together or alter conditional expressions with Boolean operators for `and`, `or` and `not`
+
+```
+Operator | Boolean Meaning
+&&       | And
+||       | Or
+!        | Not
+```
+
+- Example source code
+```c
+/* An example of Boolean "and"*/
+int x = 9;
+int y = 21;
+
+if (x < 10 && y > 20) // If x is less than 10 & y is greater than 20
+    printf("Doing something!\n");
+```
+
+```c
+/* An example of Boolean "not"*/
+int x = 90;
+
+if (!(x < 12)) // If x is not less than 12
+    printf("x is not less than 12\n");
+```
