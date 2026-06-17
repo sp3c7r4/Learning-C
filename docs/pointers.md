@@ -83,21 +83,21 @@ The real power of pointers comes into play when you start passing them to functi
 - Example source code
 ```c
     #include <stdio.h>
-
-    void increment(int *p) { /* Declares a pointer address */
-        *p = *p + 1 /* Adds one to the thing p points to */
+    
+    void increment(int *p) {
+        *p = *p + 1;
     }
-
+    
     int main(void) {
         int i = 10;
-        int *j = &i /* Using the Address-Of operator `&` we grabbed and stored the address of the variable i */
-
-        printf("I is %d\n", i)
-        printf("I is also %d\n", *j)
-
+        int *j = &i;
+    
+        printf("I is %d\n", i);
+        printf("I is also %d\n", *j);
+    
         increment(j);
-
-        printf("i is %d\n", i); /** Prints 11 */
+    
+        printf("i is %d\n", i);
     }
 ```
 

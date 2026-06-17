@@ -107,7 +107,7 @@ int main(void)
 }
 ```
 
-*Note:* The numeric value of true is 0
+*Note:* The numeric value of true is 1
 ```c
 printf("%d\n", true == 12); // Prints "0", false!
 ```
@@ -177,8 +177,8 @@ For Boolean values, we have a raft of standard operators.
 ```c
 a == b; // True if a is equal to b
 a != b; // True if a is not equal to b
-a < b;  // True if a is greater than b
-a > b;  // True if a is less than b
+a < b;  // True if a is less than b
+a > b;  // True if a is greater than b
 a <= b; // True is a is less than or equal to b
 a >= b; // True if a is greater than or equal to b; 
 ```

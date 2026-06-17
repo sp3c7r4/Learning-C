@@ -41,14 +41,14 @@ The pointer form points to whereever that string was placed. A place far away fr
 So if we try to mutate that string
 ```c
 chat *s = "Hello, World";
-s[0] = 'z' // Error - Tried to mutate a string literal
+s[0] = 'z'; // Error - Tried to mutate a string literal
 ```
 Pointing at a string literal gives you read only memory
 
 But by declaring it in an array is different. The compiler doesn't show those bytes in another part of town, they're right down the street. This one is a mutable copy of the string - one we can change at will
 ```c
 chat s[] = "Hello world";
-s[0] = 'z' // zello world
+s[0] = 'z'; // zello world
 ```
 While declaring an array gives you your own private, writeable copy
 

@@ -10,8 +10,9 @@ Though the arguments and return value types are predeclared - That's how C likes
         return n + 1;
     }
     
-    void main() {
-        j = plusOne(1);
+    int main(void) 
+    {
+        int j = plusOne(1);
         printf("Adding 1: %d", j);
     }
 ```
@@ -27,12 +28,12 @@ Parameter: This is a special type of local variable into which arguments are cop
 If an argument is a variable and it's passed into a function. The value get's copied as the argument and the expression is evaluated leaving the original value remaining unmodified.
 
 ```c
-#include <stdio.h>;
+#include <stdio.h>
 void increment(int a) {
     a++; /* Post increment */
 }
 
-void main()
+int main(void)
 {
     int i = 1;
     increment(i);
